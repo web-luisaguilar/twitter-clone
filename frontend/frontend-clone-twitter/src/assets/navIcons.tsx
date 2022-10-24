@@ -6,11 +6,20 @@ import messageIcon from '/icons/message-icon.svg';
 import saveIcon from '/icons/save-icon.svg';
 import noteIcon from '/icons/note-icon.svg';
 import profileIcon from '/icons/profile-icon.svg';
-import dotsIcon from '/icons/dotsCircle-icon.svg';
+import dotsCircleIcon from '/icons/dotsCircle-icon.svg';
 import twittIcon from '/icons/twitt-icon.svg';
 import starsIcon from '/icons/stars-icon.svg';
 import arrowDownIcon from '/icons/arrowDown-icon.svg';
 import worldIcon from '/icons/world-icon.svg';
+import photoIcon from '/icons/photo-icon.svg';
+import gifIcon from '/icons/gif-icon.svg';
+import smileIcon from '/icons/smile-icon.svg';
+import pinMapIcon from '/icons/pinMap-icon.svg';
+import responseIcon from '/icons/response-icon.svg';
+import retwittIcon from '/icons/retwitt-icon.svg';
+import heartIcon from '/icons/heart-icon.svg';
+import shareIcon from '/icons/share-icon.svg';
+import dotsIcon from '/icons/dots-icon.svg';
 
 export const icons = [
   {
@@ -51,7 +60,7 @@ export const icons = [
   {
     id: 'nav-icon-7',
     name: 'Más Opciones',
-    src: dotsIcon,
+    src: dotsCircleIcon,
   },
 ];
 export const specificIcons = {
@@ -74,5 +83,50 @@ export const specificIcons = {
     id: 'nav-icon-11',
     name: 'Todos',
     src: worldIcon,
+  },
+  photoIcon: {
+    id: 'photo-icon-12',
+    name: 'Fotos y Videos',
+    src: photoIcon,
+  },
+  gifIcon: {
+    id: 'gif-icon-13',
+    name: 'GIF',
+    src: gifIcon,
+  },
+  smileIcon: {
+    id: 'smile-icon-14',
+    name: 'Emoji',
+    src: smileIcon,
+  },
+  pinMapIcon: {
+    id: 'pinMap-icon-15',
+    name: 'Ubicacion',
+    src: pinMapIcon,
+  },
+  responseIcon: {
+    id: 'response-icon-16',
+    name: 'Responder',
+    src: responseIcon,
+  },
+  retwittIcon: {
+    id: 'retwitt-icon-17',
+    name: 'Retwittear',
+    src: retwittIcon,
+  },
+  heartIcon: {
+    id: 'heart-icon-18',
+    name: 'Me gusta',
+    src: heartIcon,
+  },
+  shareIcon: {
+    id: 'share-icon-19',
+    name: 'Compartir',
+    src: shareIcon,
+  },
+  dotsIcon: {
+    id: 'dots-icon-20',
+    name: 'Más Opciones',
+    src: dotsIcon,
   },
 };
