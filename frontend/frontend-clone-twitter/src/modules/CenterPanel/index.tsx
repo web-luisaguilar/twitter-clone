@@ -1,4 +1,14 @@
 import { specificIcons } from '../../assets/navIcons';
+import Twitt from './components/Twitt';
+
+export interface TwittType {
+  img: string;
+  userName: string;
+  userAccount: string;
+  twittTime: string;
+  twitt: string;
+  reactions: { respons: number; retwits: number; likes: number };
+}
 
 const CenterPanel = () => {
   const {
@@ -9,39 +19,47 @@ const CenterPanel = () => {
     gifIcon,
     smileIcon,
     pinMapIcon,
-    responseIcon,
-    retwittIcon,
-    heartIcon,
-    shareIcon,
-    dotsIcon,
   } = specificIcons;
-  const actionBar = [photoIcon, gifIcon, smileIcon, pinMapIcon];
-  const actionTwitt = [responseIcon, retwittIcon, heartIcon, shareIcon];
 
-  const firstTwitt = {
-    img: '/profileImg/la-2.0.jpg',
-    userName: 'Naicord',
-    userAccount: '@naicord',
-    twittTime: '10min',
-    twitt:
-      'Hola Como estan Este es un twitt de pruebas :) espero que todo bien por ahi en el stream xD',
-    reactions: { respons: 10500, retwits: 234, likes: 4535 },
-  };
+  const actionBar = [photoIcon, gifIcon, smileIcon, pinMapIcon];
+
+  const allTwitts: TwittType[] = [
+    {
+      img: '/profileImg/la-2.0.jpg',
+      userName: 'Naicord',
+      userAccount: '@naicord',
+      twittTime: '10min',
+      twitt:
+        'Hola Como estan Este es un twitt de pruebas :) espero que todo bien por ahi en el stream xD',
+      reactions: { respons: 10500, retwits: 234, likes: 4535 },
+    },
+    {
+      img: '/profileImg/la-2.0.jpg',
+      userName: 'Naicord',
+      userAccount: '@naicord',
+      twittTime: '2min',
+      twitt:
+        'Bienvendios al nuevo Twitter un lugar hermoso con posiblemente mucho hate pero es mio, y lo que es mio es bueno heheh ❤ 🤙',
+      reactions: { respons: 10500, retwits: 234, likes: 5.2 },
+    },
+  ];
 
   return (
     <>
       <div className=" w-full flex flex-col h-[5000px] border-r border-slate-700">
-        <a className="sticky top-0">
-          <header className=" flex justify-between items-center backdrop-blur-md bg-black bg-opacity-75 h-[53px] px-4 ">
-            <h1 className="font-bold text-xl">Inicio</h1>
-            <a
-              className="relative title-r  hover:bg-gray-900  bg-opacity-10  flex items-center justify-center rounded-full w-10 h-10 "
-              data-title={starsIcon.name}
-            >
-              <img src={starsIcon.src} alt={starsIcon.name} />
-            </a>
-          </header>
-        </a>
+        <div className="sticky top-0 backdrop-blur-md bg-black/60 h-[53px] z-50 ">
+          <a>
+            <header className=" flex justify-between items-center h-[53px] px-4 z-50 ">
+              <h1 className="font-bold text-xl">Inicio</h1>
+              <a
+                className="relative title-r  hover:bg-gray-900  bg-opacity-10  flex items-center justify-center rounded-full w-10 h-10 "
+                data-title={starsIcon.name}
+              >
+                <img src={starsIcon.src} alt={starsIcon.name} />
+              </a>
+            </header>
+          </a>
+        </div>
 
         <main>
           <div className="flex border-b px-4 py-1 border-b-slate-800">
@@ -128,64 +146,16 @@ const CenterPanel = () => {
             </div>
           </div>
 
-          <div className=" w-full border-b border-b-slate-700 p-4">
-            <button className="w-full text-blue-400 font-light">
+          <div className=" w-full border-b border-b-slate-700 p-4 hover:bg-white/[2%]">
+            <button className="w-full text-blue-400 font-light ">
               Mostrar 125 Tweets
             </button>
           </div>
 
-          <div>
-            <div className="w-full flex border-b  border-slate-700">
-              <div className="min-w-[48px] max-w-[48px] mx-2">
-                <a className="px-2 py-0">
-                  <img
-                    className="rounded-full "
-                    src={firstTwitt.img}
-                    alt={firstTwitt.userAccount}
-                  />
-                </a>
-              </div>
-              <div>
-                {/* Seccion del Header */}
-                <div className="flex">
-                  <p>{firstTwitt.userName}</p>
-                  <p>{firstTwitt.userAccount}</p>
-                  <p>{firstTwitt.twittTime}</p>
-                </div>
-                {/* Seccion del Twitt */}
-                <div>{firstTwitt.twitt}</div>
-
-                {/* Seccion de Acciones */}
-                <div className="flex justify-between p-2">
-                  {actionTwitt.map((el) => {
-                    return (
-                      <button className="flex w-fit opacity-50 items-center">
-                        <img
-                          src={el.src}
-                          alt={el.name}
-                          width={20}
-                          height={20}
-                        />
-                        <span className="pl-2">
-                          {firstTwitt.reactions.likes}
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-              <div className="w-[36px] ml-4">
-                <button className="w-[36px] opacity-50 relative top-2 right-4 hover:bg-slate-700 rounded-full p-2 hover:bg-opacity-60">
-                  <img
-                    src={dotsIcon.src}
-                    alt={dotsIcon.name}
-                    width={60}
-                    height={60}
-                  />
-                </button>
-              </div>
-            </div>
-          </div>
+          {/* Seccion del box full Twitt */}
+          {allTwitts.map((twitt) => (
+            <Twitt twitt={twitt} />
+          ))}
         </main>
       </div>
     </>
