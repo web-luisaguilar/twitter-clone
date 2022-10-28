@@ -13,7 +13,7 @@ import './styles/App.css';
 function App() {
   return (
     <div className="tracking-[0.02em]">
-      <div className="flex justify-between ">
+      <div className="flex justify-between md:justify-center lg:justify-around ">
         <LeftPanel />
         <CenterPanel />
         <RigthPanel />

@@ -1,12 +1,11 @@
 import { TwittType } from '..';
-import { specificIcons } from '../../../assets/navIcons';
+import { icons } from '../../../assets/Icons';
 
 interface TwittProps {
   twitt: TwittType;
 }
 const Twitt = ({ twitt }: TwittProps) => {
-  const { responseIcon, retwittIcon, heartIcon, shareIcon, dotsIcon } =
-    specificIcons;
+  const { responseIcon, retwittIcon, heartIcon, shareIcon, dotsIcon } = icons;
 
   return (
     <div>

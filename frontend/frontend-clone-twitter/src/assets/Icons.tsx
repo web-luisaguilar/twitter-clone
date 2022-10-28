@@ -21,7 +21,7 @@ import heartIcon from '/icons/heart-icon.svg';
 import shareIcon from '/icons/share-icon.svg';
 import dotsIcon from '/icons/dots-icon.svg';
 
-export const icons = [
+export const navIcons = [
   {
     id: 'nav-icon-0',
     name: 'Inicio',
@@ -63,7 +63,7 @@ export const icons = [
     src: dotsCircleIcon,
   },
 ];
-export const specificIcons = {
+export const icons = {
   twittIcon: {
     id: 'nav-icon-8',
     name: 'Twittear',
